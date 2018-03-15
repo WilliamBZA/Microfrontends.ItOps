@@ -2410,8 +2410,11 @@
         "readable-stream": "2.3.2"
       }
     },
+    "microfrontends.ratings": {
+      "version": "git+https://github.com/WilliamBZA/microfrontends.ratings.git#36e1adde3d4ce4e80180d6a23e8d03522cb48a48"
+    },
     "microfrontends.search": {
-      "version": "git+https://github.com/WilliamBZA/Microfrontends.Search.git#fbb4ecf7623855d0795bb76323723e3399615e10"
+      "version": "git+https://github.com/WilliamBZA/Microfrontends.Search.git#3ddb82cb5516e4c967ec59ecaf38adba6a10a70a"
     },
     "micromatch": {
       "version": "2.3.11",

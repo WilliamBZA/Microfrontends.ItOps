@@ -16,7 +16,7 @@ namespace ITOps.Composition
             var providers = context.RequestServices.GetServices<IProvideData>().Where(provider => provider.Matches(routeData, context.Request));
 
             var viewModel = new ExpandoObject();
-            await Task.WhenAny(Task.WhenAll(providers.Select(p => p.PopulateData(viewModel, routeData, context.Request)).ToArray()), Task.Delay(2000));
+            await Task.WhenAny(Task.WhenAll(providers.Select(p => p.PopulateData(viewModel, routeData, context.Request)).ToArray()), Task.Delay(200000));
 
             return viewModel;
         }
