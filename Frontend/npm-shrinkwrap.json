@@ -2410,6 +2410,9 @@
         "readable-stream": "2.3.2"
       }
     },
+    "microfrontends.pricing": {
+      "version": "git+https://github.com/WilliamBZA/microfrontends.pricing.git#08169f2bde9c75592c570edaf4f6395d6789d5e5"
+    },
     "microfrontends.ratings": {
       "version": "git+https://github.com/WilliamBZA/microfrontends.ratings.git#36e1adde3d4ce4e80180d6a23e8d03522cb48a48"
     },

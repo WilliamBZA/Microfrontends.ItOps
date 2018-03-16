@@ -10,12 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="imdbrating" Version="1.0.0.15" />
+    <PackageReference Include="imdbrating" Version="1.0.0.16" />
     <PackageReference Include="ITOps.Composition" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
-    <PackageReference Include="MovieDetailsFromJson" Version="1.0.0.7" />
+    <PackageReference Include="MovieDetailsFromJson" Version="1.0.0.8" />
+    <PackageReference Include="PricingCalculator" Version="1.0.0.3" />
     <PackageReference Include="SearchService" Version="1.0.0.40" />
-    <PackageReference Include="TrailerSearch" Version="1.0.0.15" />
+    <PackageReference Include="TrailerSearch" Version="1.0.0.16" />
   </ItemGroup>
 
   <ItemGroup>

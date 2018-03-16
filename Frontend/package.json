@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "microfrontends.details": "git+https://github.com/WilliamBZA/Microfrontends.moviedetails.git",
+    "microfrontends.pricing": "git+https://github.com/WilliamBZA/microfrontends.pricing.git",
     "microfrontends.ratings": "git+https://github.com/WilliamBZA/microfrontends.ratings.git",
     "microfrontends.search": "git+https://github.com/WilliamBZA/Microfrontends.Search.git",
     "microfrontends.trailers": "git+https://github.com/WilliamBZA/Microfrontends.trailers.git"

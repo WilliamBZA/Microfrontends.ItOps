@@ -4,6 +4,7 @@ import { RouteComponentProps } from 'react-router';
 import { MovieDetails } from 'microfrontends.details';
 import { TrailerView } from 'microfrontends.trailers';
 import { Ratings } from 'microfrontends.ratings';
+import { PriceDisplay } from 'microfrontends.pricing';
 
 export class MovieDetailScreen extends React.Component<any, any> {
     constructor(props: any) {
@@ -49,6 +50,9 @@ export class MovieDetailScreen extends React.Component<any, any> {
 
                 // watched
 
+                state.pricing = {
+                    totalPrice: data.totalPrice
+                };
 
                 state.rating.loading = false;
                 state.rating.imdbRating = data.imdbRating;
@@ -82,7 +86,7 @@ export class MovieDetailScreen extends React.Component<any, any> {
                         <div className="col-sm-1">
                             <Ratings rating={this.state.rating} />
                         </div>
-                        <div className="col-sm-1">Price</div>
+                        <div className="col-sm-1"><PriceDisplay pricing={this.state.pricing} /></div>
                         <div className="col-sm-1">In Stock</div>
                         <div className="col-sm-1">Watched</div>
                         <div className="col-sm-1">
