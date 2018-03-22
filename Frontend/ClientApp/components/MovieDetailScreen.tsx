@@ -13,36 +13,22 @@ export class MovieDetailScreen extends React.Component<any, any> {
         let id = props.match.params.id;
 
         this.state = {
-            movieDetails: {
-                loading: true
-            },
-            rating: {
-                loading: true
-            },
-            stock: {
-                loading: true
-            },
-            watched: {
-                loading: true
-            },
-            trailer: {
-                loading: true
-            }
+            loading: true
         };
 
         fetch('api/Data/?moviedetails=' + id)
             .then(response => response.json())
             .then(data => {
                 let state = this.state;
+                state.loading = false;
+
                 state.movieDetails = {
-                    loading: false,
                     title: data.MovieDetails.title,
                     summary: data.MovieDetails.summary,
                     posterUrl: data.MovieDetails.posterUrl
                 };
 
                 state.trailer = {
-                    loading: false,
                     trailerId: data.trailerUrl
                 };
 
@@ -50,9 +36,10 @@ export class MovieDetailScreen extends React.Component<any, any> {
                     totalPrice: data.totalPrice
                 };
 
-                state.rating.loading = false;
-                state.rating.imdbRating = data.imdbRating;
-                state.rating.userRating = data.userRating;
+                state.rating = {
+                    imdbRating: data.imdbRating,
+                    userRating: data.userRating
+                };
 
                 console.log(state.rating);
 
@@ -69,13 +56,9 @@ export class MovieDetailScreen extends React.Component<any, any> {
     }
 
     public render() {
-        var stock = {
-            quantityInStock: 2
-        };
-
-        var watched = {
-            dateWatched: ''
-        };
+        if (this.state.loading) {
+            return <div>Loading...</div>;
+        }
 
         return <span>
             <div className="row">
