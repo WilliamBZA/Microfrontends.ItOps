@@ -9,6 +9,7 @@ namespace ITOps.Composition
     public interface IProvideData
     {
         bool Matches(RouteData routeData, HttpRequest request);
+
         Task PopulateData(dynamic viewModel, RouteData routeData, HttpRequest request);
     }
 }

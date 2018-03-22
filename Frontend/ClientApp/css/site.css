@@ -125,3 +125,11 @@ body {
 .list-group-item-text {
     margin: 0 0 11px;
 }
+
+.movie-details .poster {
+    max-width:450px;
+}
+
+.action-row {
+    padding-bottom:1em;
+}

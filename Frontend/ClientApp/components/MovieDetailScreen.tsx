@@ -46,10 +46,6 @@ export class MovieDetailScreen extends React.Component<any, any> {
                     trailerId: data.trailerUrl
                 };
 
-                // Stock
-
-                // watched
-
                 state.pricing = {
                     totalPrice: data.totalPrice
                 };
@@ -60,9 +56,16 @@ export class MovieDetailScreen extends React.Component<any, any> {
 
                 console.log(state.rating);
 
-
                 this.setState(state);
             });
+    }
+
+    private getRating () {
+        if (this.state.rating && this.state.rating.imdbRating && this.state.rating.userRating) {
+            return <Ratings rating={this.state.rating} />;
+        }
+
+        return null;
     }
 
     public render() {
@@ -76,26 +79,23 @@ export class MovieDetailScreen extends React.Component<any, any> {
 
         return <span>
             <div className="row">
-                <div className="col-sm-12">
+                <div className="col-sm-5">
                     <MovieDetails movieDetails={this.state.movieDetails} />
                 </div>
-            </div>
-            <div className="row">
-                <div className="col-sm-5">
-                    <div className="row">
-                        <div className="col-sm-1">
-                            <Ratings rating={this.state.rating} />
+                <div className="col-sm-7">
+                    <div className="row action-row">
+                        <div className="col-sm-4">
+                            {this.getRating()}
                         </div>
-                        <div className="col-sm-1"><PriceDisplay pricing={this.state.pricing} /></div>
-                        <div className="col-sm-1">In Stock</div>
-                        <div className="col-sm-1">Watched</div>
-                        <div className="col-sm-1">
+                        <div className="col-sm-4"><PriceDisplay pricing={this.state.pricing} /></div>
+                        <div className="col-sm-2">In Stock</div>
+                        <div className="col-sm-2">
                             <button className="btn btn-success">Order now!</button>
                         </div>
                     </div>
-                </div>
-                <div className="col-sm-7">
-                    <TrailerView trailer={this.state.trailer} />
+                    <div className="row">
+                        <TrailerView trailer={this.state.trailer} />
+                    </div>
                 </div>
             </div>
         </span>;
